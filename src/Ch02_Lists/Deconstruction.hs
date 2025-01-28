@@ -34,7 +34,7 @@ foldl f state (x : xs) = foldl f (f state x) xs
 
 {- | Takes a function, an initial state, and a list. Applies the function to each element in the list, reducing it to a new state.
 
-Applies the function `f` _after_ recursing to the bottom.
+Applies the function `f` _after_ recursing to and evaluating the bottom.
 -}
 foldr :: forall a b. (b -> a -> a) -> a -> [b] -> a
 foldr _ state [] = state

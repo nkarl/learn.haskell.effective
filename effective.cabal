@@ -62,6 +62,7 @@ library
                       Ch02_Lists.Deconstruction
                       Ch02_Lists.Comprehension
                       Ch02_Lists.Streams
+                      Ch02_Lists.StreamsLazy
 
     -- Modules included in this library but not exported.
     -- other-modules:
