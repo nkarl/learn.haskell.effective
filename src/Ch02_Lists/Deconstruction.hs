@@ -24,11 +24,24 @@ isBalanced' str =
         | x == ')' = count - 1
         | otherwise = count
 
--- | Takes a function, an initial state, and a list. Applies the function to each element in the list, reducing it to a new state.
+{- | Takes a function, an initial state, and a list. Applies the function to each element in the list, reducing it to a new state.
+
+Applies the function `f` _before_ recursing.
+-}
 foldl :: forall a b. (a -> b -> a) -> a -> [b] -> a
 foldl _ state [] = state
 foldl f state (x : xs) = foldl f (f state x) xs
 
+{- | Takes a function, an initial state, and a list. Applies the function to each element in the list, reducing it to a new state.
+
+Applies the function `f` _after_ recursing to the bottom.
+-}
 foldr :: forall a b. (b -> a -> a) -> a -> [b] -> a
 foldr _ state [] = state
 foldr f state (x : xs) = f x (foldr f state xs)
+
+foldr' :: forall a b. (b -> a -> a) -> a -> [b] -> a
+foldr' f state xs =
+    if null xs
+        then state
+        else f (head xs) (foldr' f state (tail xs))
