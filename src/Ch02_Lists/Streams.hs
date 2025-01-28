@@ -55,7 +55,12 @@ fib n
     | n == 1 = 1
     | otherwise = fib (n - 1) + fib (n - 2)
 
--- | Creates a stream/generator of Fibonacci sequence. Mapped from the compute function `fib`.
+{- | Creates a stream/generator of Fibonacci sequence. Mapped from the compute function `fib`.
+
+Not very efficient, because the compute function `fib` is applied _every single time_ despite the lazy stream [1..] .
+In other words, for every element in the stream, `fib` has to reach the bottom cases 0 and 1, and then go back up the
+stack and recompute every single index _over and over_ again. This becomes exponentially heavy on larger indices.
+-}
 fibs :: [Integer]
 fibs = fib <$> [0 ..]
 
