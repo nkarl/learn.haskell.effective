@@ -59,7 +59,9 @@ library
 
     -- Modules exported by the library.
     exposed-modules:  MyLib
-                      Ch02_Lists.Deconstructing
+                      Ch02_Lists.Deconstruction
+                      Ch02_Lists.Comprehension
+                      Ch02_Lists.Streams
 
     -- Modules included in this library but not exported.
     -- other-modules:

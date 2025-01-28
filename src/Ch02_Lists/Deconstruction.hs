@@ -1,6 +1,6 @@
-module Ch02_Lists.Deconstructing where
+module Ch02_Lists.Deconstruction where
 
-import Prelude
+import Prelude hiding (foldl, foldr)
 
 -- | Checks if the parentheses in a String are balanced, i.e. it has the same nunber of opening and closing parentheses.
 isBalanced :: String -> Bool
@@ -16,7 +16,7 @@ isBalanced str =
 
 isBalanced' :: String -> Bool
 isBalanced' str =
-    0 == reduce check 0 str
+    0 == foldl check 0 str
   where
     check :: Integer -> Char -> Integer
     check count x
@@ -25,8 +25,10 @@ isBalanced' str =
         | otherwise = count
 
 -- | Takes a function, an initial state, and a list. Applies the function to each element in the list, reducing it to a new state.
-reduce :: forall a b. (a -> b -> a) -> a -> [b] -> a
-reduce _ state [] = state
-reduce f state (x : xs) = reduce f newState xs
-  where
-    newState = f state x
+foldl :: forall a b. (a -> b -> a) -> a -> [b] -> a
+foldl _ state [] = state
+foldl f state (x : xs) = foldl f (f state x) xs
+
+foldr :: forall a b. (b -> a -> a) -> a -> [b] -> a
+foldr _ state [] = state
+foldr f state (x : xs) = f x (foldr f state xs)
