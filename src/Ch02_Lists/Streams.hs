@@ -7,10 +7,13 @@ numbersFrom :: Integer -> [Integer]
 numbersFrom n =
     n : numbersFrom (n + 1)
 
-{- | Always returns an Integer between 0 and 359 by using the @cycle@ function.
+{- |
+Always returns an Integer between 0 and 359 by using the @cycle@ function.
 
 @
-6 == radsToDegrees 0.12 -- >>> True
+>>> 6 == radsToDegrees 0.12
+True
+
 @
 -}
 radsToDegrees :: Float -> Integer
