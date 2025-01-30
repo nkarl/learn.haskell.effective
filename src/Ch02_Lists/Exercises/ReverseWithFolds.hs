@@ -40,7 +40,7 @@ reverse = foldl (flip (:)) mempty
 reverse' :: forall a. [a] -> [a]
 reverse' = myFoldl (flip (:)) mempty
 
--- | `foldl` rewritten in terms of `foldr`.
+-- | `foldl` rewritten in terms of `foldr` using a lambda `construct`.
 myFoldl :: (s -> a -> s) -> s -> [a] -> s
 myFoldl g acc xs = foldr construct (\acc' -> acc') xs acc
   where
@@ -51,22 +51,22 @@ myFoldl g acc xs = foldr construct (\acc' -> acc') xs acc
 Applies the function `f` _before_ recursing.
 -}
 foldl :: forall s a. (s -> a -> s) -> s -> [a] -> s
-foldl _ s [] = s
-foldl f s (a : as) = foldl f (f s a) as
+foldl _ t [] = t
+foldl g t (a : as) = foldl g (g t a) as
 
 {- | Takes a function, an initial state, and a list. Applies the function to each element in the list, reducing it to a new state.
 
 Applies the function `f` _after_ recursing to and evaluating the bottom.
 -}
 foldr :: forall s a. (a -> s -> s) -> s -> [a] -> s
-foldr _ state [] = state
-foldr f state (x : xs) = f x (foldr f state xs)
+foldr _ t [] = t
+foldr g t (a : as) = g a (foldr g t as)
 
 flipFoldl :: forall t a. (t -> a -> t) -> [a] -> t -> t
 flipFoldl _ [] = \t -> t
-flipFoldl g (a : as) = \t -> f (g t a)
+flipFoldl g (a : as) = \t -> _f (g t a)
   where
-    f = (flip <<< foldl) g as
+    _f = (flip <<< foldl) g as
 
 -- using `foldlr`
 flipFoldl' :: forall t a. (t -> a -> t) -> [a] -> (t -> t)

@@ -30,7 +30,9 @@ zipWith f as bs =
             then mempty
             else f a b : zipWith f (tail as) (tail bs)
 
-{- | Combines 2 lists according to a function. Uses list comprehension. Requires the 'Parallel List Comprehension' language support.
+{- | Combines 2 lists according to a function. Uses list comprehension.
+
+Requires _Parallel List Comprehension_ language pragma.
 
 @
 {\-# LANGUAGE ParallelListComp #-\}
