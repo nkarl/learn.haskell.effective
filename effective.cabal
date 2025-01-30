@@ -66,6 +66,7 @@ library
                       Ch02_Lists.Exercises.ReverseWithFolds
                       Ch02_Lists.Exercises.ZippingLists
                       Ch04_NewTypes.InductiveTypes.Peano
+                      Ch04_NewTypes.InductiveTypes.List
 
     -- Modules included in this library but not exported.
     -- other-modules:
