@@ -17,7 +17,7 @@ import Prelude hiding (foldl, foldr, reverse)
 
     To implement `foldr` takes a lot more work. For now a crude summary is: `foldl` can be rewritten as a `foldr` but the state/accumulator is made into a function `f`.
     The function `g` (to be applied to each element of the input list) is partially applied inside another function `construct`, and then passed on to `f` via the
-    reverse composition `>>>`.
+    reverse composition `>>>`. The rationale involves the _fusion property_ discussed in Hutton's linked paper below.
 
     TODO: Follow the links below for a detailed breakdown.
 
