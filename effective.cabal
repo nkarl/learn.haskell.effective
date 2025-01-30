@@ -64,6 +64,7 @@ library
                       Ch02_Lists.Streams
                       Ch02_Lists.StreamsLazy
                       Ch02_Lists.Exercises.ReverseWithFolds
+                      Ch02_Lists.Exercises.ZippingLists
 
     -- Modules included in this library but not exported.
     -- other-modules:
