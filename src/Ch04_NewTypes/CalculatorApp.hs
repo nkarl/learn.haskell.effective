@@ -88,6 +88,8 @@ parse ws =
 {- | Attempts to transform a some words into an @Expr@. Tracks the remainder of the input words. Mutually
 recursive with @makeInfixExpr@.
 
+Named @parse'@ in the book.
+
 >>> (tokenize . words) "+ 2 3 - 5"
 Right (Add (Lit 2) (Lit 3),["-","5"])
 -}
@@ -105,6 +107,8 @@ tokenize (word : rest) = case word of
 
 {- | Attempts to transform an arithmetic function and some words into an @Expr@. Mutually recursive
 with @tokenize@.
+
+Named @parseBinary@ in the book.
 -}
 makeInfixExpr :: (Expr -> Expr -> Expr) -> [Word] -> Either ErrorMsg (Expr, [Word])
 makeInfixExpr f _words = do
