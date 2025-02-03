@@ -1,6 +1,5 @@
 module Memes where
 
-import Control.Monad (unless)
 import Prelude
 
 {- | https://x.com/Charles_Ntd/status/1885150701292056720

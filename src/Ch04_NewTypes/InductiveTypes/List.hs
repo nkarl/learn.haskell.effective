@@ -1,6 +1,7 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-
 {-# HLINT ignore "Use foldr" #-}
+{-# OPTIONS_GHC -Wno-unused-imports #-}
+
 module Ch04_NewTypes.InductiveTypes.List where
 
 import Control.Arrow
@@ -8,9 +9,9 @@ import Data.Char (toUpper)
 import Prelude
 
 data List a
-  = Empty
-  | Cons a (List a)
-  deriving (Show)
+    = Empty
+    | Cons a (List a)
+    deriving (Show)
 
 -- | Converts from type @[a]@ to our custom type @List a@. Explicit recursion.
 _toList :: forall a. [a] -> List a
@@ -69,9 +70,9 @@ Cons 3 (Cons 2 (Cons 1 Empty))
 -}
 listReverse :: forall a. List a -> List a
 listReverse xs = go xs Empty
- where
-  go Empty acc = acc
-  go (Cons a ls) acc = go ls (Cons a acc)
+  where
+    go Empty acc = acc
+    go (Cons a ls) acc = go ls (Cons a acc)
 
 {- | Applies a unary function to a List.
 
@@ -80,7 +81,6 @@ listReverse xs = go xs Empty
 
 2. Example
 >>> listMap (toUpper) $ toList ['a', 'b', 'c']
-
 -}
 listMap :: forall a b. (a -> b) -> List a -> List b
 listMap g = listFoldr (Cons <<< g) Empty
