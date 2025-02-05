@@ -36,6 +36,15 @@ data Expr
     | Div Expr Expr
     deriving (Show, Eq, Ord)
 
+{-
+   NOTE: on the semantic meaning of the type aliases below.
+
+   All the aliases below are underlied by the more universal type String. String is _the_ operational
+   type _for us humans_ when we interface with the machine. In this example program, from the input, to
+   the input broken into words for further processing, to the error messages -- the choice of String is
+   the easiest and most natural type to work with. It is ubiquitous in that sense, and therefore carries
+   that semantic meaning across all aliases.
+-}
 type Input = String
 type ErrorMsg = String
 type Word = String
