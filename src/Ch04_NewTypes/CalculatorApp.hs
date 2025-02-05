@@ -17,10 +17,13 @@ import Prelude hiding (Word)
 
     > run "- 10 + 1 * 2 / 8 4"
     "The answer is: 5"
+
+    NOTE: This is a simple example so all functions are monomorphic.
 -}
 
-{- | This co-product type expresses the recursive nature of an arithmetic expression. The bottom case
-is an Integral _literal_. Otherwise, it is another Expr (recursive) denoting a supported infix operation.
+{- | This co-product type expresses the recursive nature of an arithmetic expression. The bottom case is
+an Integral _literal_ value, as in @Lit 2@ or @Lit 12@. Otherwise, it is another Expr (recursive) encoding
+a supported infix operation.
 
 The supported operations are Add, Sub, Mul, Div. An operation consists of an _operator_ and 2 _operand_
 symbols, in that order.
@@ -38,7 +41,8 @@ type ErrorMsg = String
 type Word = String
 type Output = String
 
-{- | Evaluates an @Expr@ into the monomorphic primitive @Int@. This is the core evaluator of the co-product type.
+{- | Evaluates an @Expr@ into the monomorphic primitive @Int@. This is the core evaluator of the co-product
+type.
 
 >>> evaluate $ Add (Lit 1) (Lit 2)
 3
@@ -67,11 +71,13 @@ evaluate expr =
    validating that an `Expr` is only valid if the entire input is consumed.
 -}
 
-{- | Attempts to transform a series of input @Word@ into an @Expr@. Handles error appropriately. This combinator handles 3 parsing cases.
+{- | Attempts to transform a series of input @Word@ into an @Expr@. Handles error appropriately. This
+combinator handles 3 parsing cases.
 
 All errors are handled on the Left branch. The Right branch splits further into 2 separate cases.
 - A successful tokenization consumes the entire input.
-- Otherwise, some extra token which cannot be make into a valid @Expr@ must exist, which bubbles up to the Left branch as an error.
+- Otherwise, some extra token which cannot be made into a valid @Expr@ must exist, which bubbles up
+    to the Left branch as an error.
 
 >>> (parse . words) "+ 2 3"
 Right (Add (Lit 2) (Lit 3))
@@ -85,8 +91,8 @@ parse ws =
         -- some extra token/word must have been found, causing the input remainder to be non-empty.
         Right (_, rest) -> Left $ "Found extra tokens: " <> unwords rest
 
-{- | Attempts to transform a some words into an @Expr@. Tracks the remainder of the input words. Mutually
-recursive with @makeInfixExpr@.
+{- | Attempts to transform some words into an @Expr@. Tracks the remainder of the input. Mutually recursive
+with @makeInfixExpr@.
 
 Named @parse'@ in the book.
 
@@ -117,7 +123,7 @@ makeInfixExpr f _words = do
     Right (f a b, bs)
 
 {-
-   NOTE: the function `run` finally composes the above functions into a single action. It evaluates
+   NOTE: the function `run` finally composes the functions above into a single action. It evaluates
    a valid `Expr` but abstracting away the underlying details into a single transformation, from a
    user input `String` into a formatted output `String`.
 -}
@@ -125,8 +131,8 @@ makeInfixExpr f _words = do
 {- | Parses a @String@ input and transforms it into a formatted @String@ output.
 
 This combinator is composed from the @parse@ and @evaluate@ combinators. Any errors arisen from the process
-will bubble up to the top (this combinator) and handled on the Left branch. Otherwise, the result is
-a valid @Expr@ on Right branch, which is promptly computed.
+will bubble up to the top (this combinator) and handled on the Left branch. Otherwise, the result is a
+valid @Expr@ on the Right branch, which is promptly computed and embedded in a formatted String.
 -}
 run :: Input -> Output
 run expr =
