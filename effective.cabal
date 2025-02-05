@@ -68,6 +68,7 @@ library
                       Ch04_NewTypes.InductiveTypes.Peano
                       Ch04_NewTypes.InductiveTypes.List
                       Ch04_NewTypes.CalculatorApp
+                      Ch04_NewTypes.Exercises.PlantingTrees
                       Memes
 
     -- Modules included in this library but not exported.
