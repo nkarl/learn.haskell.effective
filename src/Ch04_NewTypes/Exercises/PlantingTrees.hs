@@ -5,7 +5,7 @@ import Prelude
 {-
     NOTE:
     - [x] Write the definition of the binary tree type, and then
-    - [ ] implement the 3 functions below.
+    - [x] implement the 3 functions in the book.
 -}
 
 {- | This co-product type represents a binary tree. There are 2 data variants:
@@ -149,8 +149,20 @@ showStringTree = show
 
 -- | Adds an @Int@ element to a @Tree@ of monomorphic @Int@.
 addElementToIntTree :: Tree Int -> Int -> Tree Int
-addElementToIntTree = undefined -- TODO
+addElementToIntTree = flip insertNode
 
--- | Checks if a monomorphic @Tree Int@ contains some @Int@ element.
+-- | Checks if a node exists in a @Tree a@.
+hasNode :: forall a. (Eq a, Ord a) => a -> Tree a -> Bool
+hasNode _ Leaf = False
+hasNode a (Branch left k right)
+    | a == k = True
+    | a < k = hasNode a left
+    | otherwise = hasNode a right
+
+{- | Checks if a monomorphic @Tree Int@ contains some @Int@ element.
+
+>>> flip doesIntExist 3 $ makeTree [3, 1, 2, 7, 5, 4]
+True
+-}
 doesIntExist :: Tree Int -> Int -> Bool
-doesIntExist = undefined -- TODO
+doesIntExist = flip hasNode
