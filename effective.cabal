@@ -70,6 +70,7 @@ library
                       Ch04_NewTypes.CalculatorApp
                       Ch04_NewTypes.Exercises.PlantingTrees
                       Ch04_NewTypes.Exercises.EvalDivByZero
+                      Ch04_NewTypes.Exercises.PrettyPrint
                       Memes
 
     -- Modules included in this library but not exported.
