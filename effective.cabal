@@ -69,6 +69,7 @@ library
                       Ch04_NewTypes.InductiveTypes.List
                       Ch04_NewTypes.CalculatorApp
                       Ch04_NewTypes.Exercises.PlantingTrees
+                      Ch04_NewTypes.Exercises.EvalDivByZero
                       Memes
 
     -- Modules included in this library but not exported.

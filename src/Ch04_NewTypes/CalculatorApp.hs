@@ -53,6 +53,8 @@ type Output = String
 {- | Evaluates an @Expr@ into the monomorphic primitive @Int@. This is the core evaluator of the co-product
 type.
 
+Named @eval@ in the book.
+
 >>> evaluate $ Add (Lit 1) (Lit 2)
 3
 -}
