@@ -71,6 +71,8 @@ library
                       Ch04_NewTypes.Exercises.PlantingTrees
                       Ch04_NewTypes.Exercises.EvalDivByZero
                       Ch04_NewTypes.Exercises.PrettyPrint
+                      Ch05_StructuringProjects.SmartConstructors
+                      Ch05_StructuringProjects.PhantomTypes
                       Memes
 
     -- Modules included in this library but not exported.

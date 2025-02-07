@@ -1,4 +1,4 @@
-module Ch04_NewTypes.Exercises.EvalDyvByZero where
+module Ch04_NewTypes.Exercises.EvalDivByZero where
 
 import Ch04_NewTypes.CalculatorApp qualified as Calc
 import Prelude
