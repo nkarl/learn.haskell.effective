@@ -12,18 +12,22 @@ import Prelude
     privilege plane as other data. This also applies to the user's password.
     These private information should only be available to a user who is logged in.
 
-    NOTE: We can use the phantom types to represent this. It's a different from
-    sum types.
+    NOTE: We can use the phantom types to represent this. They are different from
+    regular data types. Phantom types do not have value constructors.
 -}
 
-data User = User
+-- phantom types without data constructors
+data Authenticated
+data UnAuthenticated
+
+data User a = User
     { userName :: String
     , userInternetPoints :: Int
     , userPassword :: String
     , userEmailAddress :: String
     }
 
-users :: [User]
+users :: [User a]
 users = [george, porter]
   where
     george =
@@ -41,15 +45,19 @@ users = [george, porter]
             , userEmailAddress = "woofwoof@example.com"
             }
 
-lookupUser :: String -> Maybe User
+-- | Looks up the username regardless of their Authenticated status.
+lookupUser :: String -> Maybe (User a)
 lookupUser name =
     find (\u -> userName u == name) users
 
-getUserName :: User -> String
+-- | Gets the username regardless of their Authenticated status.
+getUserName :: User a -> String
 getUserName = userName
 
-getUserScore :: User -> Int
+-- | Gets the user's score regardless of their Authenticated status.
+getUserScore :: User a -> Int
 getUserScore = userInternetPoints
 
-getUserEmailAddress :: User -> String
+-- | Gets the user's email only if they are authenticated.
+getUserEmailAddress :: User Authenticated -> String
 getUserEmailAddress = userEmailAddress
