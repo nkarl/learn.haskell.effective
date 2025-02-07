@@ -1,4 +1,14 @@
-module Ch05_StructuringProjects.PhantomTypes where
+{-# LANGUAGE RecordWildCards #-}
+
+module Ch05_StructuringProjects.PhantomTypes (
+    User,
+    lookupUser,
+    authenticate,
+    getUserName,
+    getUserScore,
+    getUserEmailAddress,
+)
+where
 
 import Data.Foldable (find)
 import Prelude
@@ -27,6 +37,7 @@ data User a = User
     , userEmailAddress :: String
     }
 
+-- | example user data.
 users :: [User a]
 users = [george, porter]
   where
@@ -57,6 +68,16 @@ getUserName = userName
 -- | Gets the user's score regardless of their Authenticated status.
 getUserScore :: User a -> Int
 getUserScore = userInternetPoints
+
+{- | The record fields in the @User UnAuthenticated@ input are destructured. The passwords are
+checked. If they match, then all fields in the input will be exported into a @User@ data
+contructor to make a new object. The compiler automatically infers and fits the object into
+the phatom type @User Authenticated@.
+-}
+authenticate :: User UnAuthenticated -> String -> Maybe (User Authenticated)
+authenticate User{..} pass
+    | userPassword == pass = Just User{..}
+    | otherwise = Nothing
 
 -- | Gets the user's email only if they are authenticated.
 getUserEmailAddress :: User Authenticated -> String
