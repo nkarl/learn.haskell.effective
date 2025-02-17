@@ -1,6 +1,6 @@
 {-# LANGUAGE ExplicitForAll #-}
 
-module Ch07_IO.FileSystem where
+module Ch07_IO.LazyIOInteractions.NoRaisedError where
 
 import Data.Kind
 import Prelude
@@ -22,6 +22,9 @@ noPassword path = case path of
 showFile :: FilePath -> IO ()
 showFile path = noPassword path `andThen` putStrLn
 
+{- | In this example, because the @>>@ combinator discards the output of the prior function, when combined
+with lazyness, the division-by-zero expression is never evaluated (because it's never needed).
+-}
 lazyIODemo :: IO ()
 lazyIODemo =
     let

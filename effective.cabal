@@ -76,7 +76,8 @@ library
                       Ch06_TypeClasses.NaturalClass
                       Ch06_TypeClasses.HigherKindedType
                       Ch06_TypeClasses.Selector
-                      Ch07_IO.FileSystem
+                      Ch07_IO.LazyIOInteractions.NoRaisedError
+                      Ch07_IO.LazyIOInteractions.UnexpectedCrash
                       Memes
 
     -- Modules included in this library but not exported.
