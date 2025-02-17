@@ -79,6 +79,7 @@ library
                       Ch07_IO.LazyIOInteractions.NoRaisedError
                       Ch07_IO.LazyIOInteractions.UnexpectedCrash
                       Ch07_IO.Exercises.IOTypes
+                      Ch07_IO.Exercises.IOCalculator
                       Memes
 
     -- Modules included in this library but not exported.
@@ -89,6 +90,7 @@ library
 
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.18.2.1
+                    , split
 
     -- Directories containing source files.
     hs-source-dirs:   lib
