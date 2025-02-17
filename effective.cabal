@@ -80,6 +80,7 @@ library
                       Ch07_IO.LazyIOInteractions.UnexpectedCrash
                       Ch07_IO.Exercises.IOTypes
                       Ch07_IO.Exercises.IOCalculator
+                      Ch07_IO.Exercises.WordReplacementTherapy
                       Memes
 
     -- Modules included in this library but not exported.

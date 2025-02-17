@@ -28,7 +28,9 @@ evalExpr expr = case expr of
   where
     nums = mapToNums $ tail expr
 
--- | Runs @evalExpr@ in IO. Asks the user for an prefix expression and evaluates it in IO.
+{- | Runs @evalExpr@ in IO. Asks the user for a prefix expression and evaluates it in IO. The input expression
+is presumeed to be in the correct format.
+-}
 runCalc :: IO ()
 runCalc = do
     expr <- splitExpr <$> getLine
