@@ -78,6 +78,7 @@ library
                       Ch06_TypeClasses.Selector
                       Ch07_IO.LazyIOInteractions.NoRaisedError
                       Ch07_IO.LazyIOInteractions.UnexpectedCrash
+                      Ch07_IO.Exercises.IOTypes
                       Memes
 
     -- Modules included in this library but not exported.
