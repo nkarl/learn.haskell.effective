@@ -69,10 +69,10 @@ listTail (Cons _ as) = as
 Cons 3 (Cons 2 (Cons 1 Empty))
 -}
 listReverse :: forall a. List a -> List a
-listReverse xs = go xs Empty
+listReverse ls = go ls Empty
   where
     go Empty acc = acc
-    go (Cons a ls) acc = go ls (Cons a acc)
+    go (Cons x xs) acc = go xs (Cons x acc)
 
 {- | Applies a unary function to a List.
 

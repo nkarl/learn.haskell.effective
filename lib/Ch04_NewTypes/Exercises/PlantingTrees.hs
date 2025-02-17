@@ -15,7 +15,7 @@ import Prelude
     - 2 recursive sub trees representing the the two branches of the tree.
 
 Technically, the provided tree definition has no constraints on its ordering. There is no distinction
-between the Left and Right branches. Its nodes thus can be in any order, so the constructor itself is
+between the Left and Right branches. Its nodes thus can be in any order, so the ordering itself is
 runtime-polymorphic, i.e. every tree has to be constructed from scratch with the order of the nodes
 specified by the user.
 
@@ -44,8 +44,8 @@ makeTree = foldr insertNode Leaf . reverse
 insertNode :: (Show a, Ord a) => a -> Tree a -> Tree a
 insertNode a Leaf = Branch Leaf a Leaf
 insertNode a t@(Branch left x right)
-    | a == x = t
-    | a < x = Branch (insertNode a left) x right
+    | x == a = t
+    | x >  a = Branch (insertNode a left) x right
     | otherwise = Branch left x (insertNode a right)
 
 {- | Converts a @Tree@ into a flat monotonically increasing sequence.
@@ -80,7 +80,7 @@ flatten t = go t []
     direction is bounded on the right edge of the screen; any line that exceeds the width of the screen
     is automatically truncated and the its remainder sent to the next line.
 
-    This tracks with the chracteristics of a binary tree: its depth increases by $O(Ln(N))$ while
+    This tracks with the chracteristics of a binary tree: its depth increases by $O(LogN)$ while
     its total number of nodes increases by $O(N^2)$.
 
     In other words, because the number of layers increases much more slowly, it makes sense to draw

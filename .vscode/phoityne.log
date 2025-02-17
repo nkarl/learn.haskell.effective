@@ -1,0 +1,76 @@
+2025-02-07 22:13:55.782623699000 [276110(ThreadId 21)] ERROR APP - user error (no stacktrace found.)
+2025-02-07 22:13:55.824623377000 [276110(ThreadId 21)] ERROR APP - user error (no stacktrace found.)
+2025-02-07 22:13:57.937163799000 [276110(ThreadId 21)] ERROR APP - user error (ExecResult not found.)
+2025-02-07 22:15:55.363850537000 [278851(ThreadId 21)] ERROR APP - user error (no stacktrace found.)
+2025-02-07 22:15:55.380721095000 [278851(ThreadId 21)] ERROR APP - user error (no stacktrace found.)
+2025-02-07 22:16:01.081608287000 [278851(ThreadId 21)] ERROR APP - user error (ExecResult not found.)
+2025-02-07 22:19:04.977725369000 [280347(ThreadId 21)] ERROR APP - user error (no stacktrace found.)
+2025-02-07 22:19:05.028630952000 [280347(ThreadId 21)] ERROR APP - user error (no stacktrace found.)
+2025-02-07 22:19:05.167913389000 [280347(ThreadId 21)] ERROR APP - user error (ExecResult not found.)
+2025-02-07 22:28:50.731462162000 [289995(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:28:54.326186198000 [289995(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:29:36.767556680000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:29:47.257098323000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:29:54.299080852000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:30:00.482334021000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:30:03.899448975000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:30:05.953637424000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:30:07.173948572000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:31:52.862923565000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:31:55.195785887000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:02.269934282000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:03.707444214000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:08.404993914000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:10.393745608000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:11.957705948000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:12.869347429000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:13.489377593000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:16.543077257000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:20.262697637000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:23.612831783000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:25.352529293000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:25.968623610000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:26.790771193000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:27.888032225000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:28.338897912000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:32:29.142869355000 [291263(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-07 22:34:25.141501295000 [293391(ThreadId 21)] ERROR APP - [CRITICAL] can not get the initial ghci prompt.
+2025-02-07 22:34:48.962848331000 [293642(ThreadId 21)] ERROR APP - [CRITICAL] can not get the initial ghci prompt.
+2025-02-07 22:41:37.335794204000 [306323(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/app/Main.hs> [])
+2025-02-07 22:41:37.353533063000 [306323(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/src/Ch04_NewTypes/Exercises/PlantingTrees.hs> [])
+2025-02-07 22:41:37.366144644000 [306323(ThreadId 21)] ERROR APP - start debugging failed. user error (ExecResult not found.) : Left "user error (ExecResult not found.)"
+2025-02-07 22:41:52.720061326000 [306531(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/app/Main.hs> [])
+2025-02-07 22:41:52.736612581000 [306531(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/src/Ch04_NewTypes/Exercises/PlantingTrees.hs> [])
+2025-02-07 22:41:52.751495726000 [306531(ThreadId 21)] ERROR APP - start debugging failed. user error (ExecResult not found.) : Left "user error (ExecResult not found.)"
+2025-02-07 22:42:04.349085525000 [306718(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/app/Main.hs> [])
+2025-02-07 22:42:04.365284301000 [306718(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/src/Ch04_NewTypes/Exercises/PlantingTrees.hs> [])
+2025-02-07 22:42:04.376765829000 [306718(ThreadId 21)] ERROR APP - start debugging failed. user error (ExecResult not found.) : Left "user error (ExecResult not found.)"
+2025-02-07 22:42:29.285337936000 [307290(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/app/Main.hs> [])
+2025-02-07 22:42:29.301323996000 [307290(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/src/Ch04_NewTypes/Exercises/PlantingTrees.hs> [])
+2025-02-07 22:42:29.313318213000 [307290(ThreadId 21)] ERROR APP - start debugging failed. user error (ExecResult not found.) : Left "user error (ExecResult not found.)"
+2025-02-07 22:42:32.247597023000 [307290(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/app/Main.hs> [])
+2025-02-07 22:42:38.120500736000 [307465(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/app/Main.hs> [])
+2025-02-07 22:42:38.134526200000 [307465(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/src/Ch04_NewTypes/Exercises/PlantingTrees.hs> [])
+2025-02-07 22:42:38.145858041000 [307465(ThreadId 21)] ERROR APP - start debugging failed. user error (ExecResult not found.) : Left "user error (ExecResult not found.)"
+2025-02-07 22:43:07.301522488000 [308212(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/app/Main.hs> [])
+2025-02-07 22:43:07.314065851000 [308212(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/src/Ch04_NewTypes/Exercises/PlantingTrees.hs> [])
+2025-02-07 22:43:07.328109517000 [308212(ThreadId 21)] ERROR APP - start debugging failed. user error (ExecResult not found.) : Left "user error (ExecResult not found.)"
+2025-02-07 22:48:46.148754260000 [313511(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/app/Main.hs> [])
+2025-02-07 22:48:46.170061190000 [313511(ThreadId 21)] ERROR APP - user error (<getModule> loaded module can not find from path. </home/karl/Dev/LAB/functional/haskell/learn/effective/src/Ch04_NewTypes/Exercises/PlantingTrees.hs> [])
+2025-02-07 22:48:46.193113784000 [313511(ThreadId 21)] ERROR APP - start debugging failed. user error (ExecResult not found.) : Left "user error (ExecResult not found.)"
+2025-02-08 22:06:14.154575482000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:06:15.923604932000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:06.741850406000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:08.295337287000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:09.573771785000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:16.849800589000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:18.960195021000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:20.923464313000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:21.961382103000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:25.127441139000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:25.876715129000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:26.610182830000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:27.824241377000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:28.684754653000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:29.212005729000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history
+2025-02-08 22:07:29.788608736000 [483871(ThreadId 21)] ERROR APP - already at the beginning of the history

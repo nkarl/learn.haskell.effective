@@ -1,8 +1,8 @@
+{-# OPTIONS_GHC -Wno-type-defaults #-}
 module Main where
 
-import qualified MyLib (someFunc)
+import qualified Ch04_NewTypes.Exercises.PlantingTrees as PlantingTrees
 
 main :: IO ()
 main = do
-  putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+  print $ PlantingTrees.makeTree [3,1,2,7,5,4]
