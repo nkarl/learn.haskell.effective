@@ -4,8 +4,6 @@
 {-# HLINT ignore "Collapse lambdas" #-}
 module Ch07_IO.Exercises.IOTypes where
 
-import Control.Arrow
-import Control.Monad (join)
 import Prelude
 
 myFunc :: IO (IO String)
