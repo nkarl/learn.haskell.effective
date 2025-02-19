@@ -1,8 +1,11 @@
 module Ch07_IO.Exercises.WordReplacementTherapy where
 
 import Control.Arrow
-import Control.Monad
+import Control.Monad (void)
 import Data.List.Split
+import Data.Maybe (fromMaybe)
+import Data.Traversable (for)
+import System.Directory
 import Prelude
 
 -- | Splits an input string into a list of arguments.
@@ -18,32 +21,48 @@ splitArgs s =
     dropEmpty :: [String] -> [String]
     dropEmpty = filter (not <<< (== ""))
 
--- | Makes a file, writes some content into it. Finally, shows the the content.
-makeAndShow :: String -> String -> IO ()
-makeAndShow fileName content = do
-    writeFile fileName content
-    readFile fileName >>= (show >>> print)
-
-type HayStack = String
+type HayStack = [String]
 type Needle = String
 type Replacement = String
 
-replace :: HayStack -> Needle -> Replacement -> IO ()
+replace :: HayStack -> Needle -> Replacement -> Maybe HayStack
 replace haystack needle replacement = do
-    {--
-       TODO: find the needle in the haystack.
-       - search the haystack for the needle and replace it with the new one.
-    --}
-    pure ()
+    for haystack (Just <<< findAndReplace)
+  where
+    findAndReplace word = if word == needle then replacement else word
 
+{- | Runs the app, which does the following:
+
+    1. open and read contents at the file already put at `/tmp/latin.txt`.
+    2. replace every needle from the contents (haystack) and show on the screen.
+
+SETUP:
+    1. data: get either
+        - some stock latin text here: https://loremipsum.io/
+        - a big list of words here: https://github.com/dwyl/english-words/blob/master/words_alpha.txt
+    2. generate a file at `/tmp/words.txt`
+-}
 runApp :: IO ()
 runApp = do
-    -- TODO: create a test data file at "/tmp/wordreplace.txt"
-    let fileName = "/tmp/wordreplace.txt"
-        content = "hello world!"
-    makeAndShow fileName content
+    let path = "/tmp/words.txt"
 
+    putStr "Please enter 3 arguments ( path , word, replacement ): "
     input <- getLine
-    -- TODO: transform input
-    let (path : needle : replacement) = splitArgs input
-    print input
+    {--
+        GHCI is weird. It adds extra special character for keys like BackSpace.
+
+        TODO change the any @_@ placeholder back to @path@ for testing in GHCI.
+    --}
+    [_, needle, replacement] <- case splitArgs input of
+        [] -> error "empty input"
+        [_] -> error "not enough arguments"
+        (_ : needle : replacement) -> pure (path : needle : replacement)
+    isValidFile <- doesFileExist path
+    void $
+        if isValidFile
+            then do
+                let connector = " "
+                haystack <- splitOn connector <$> readFile path
+                print $ replace haystack needle replacement
+            else
+                runApp
