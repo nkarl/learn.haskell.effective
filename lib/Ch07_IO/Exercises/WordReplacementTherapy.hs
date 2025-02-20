@@ -3,7 +3,6 @@ module Ch07_IO.Exercises.WordReplacementTherapy where
 import Control.Arrow
 import Control.Monad (void)
 import Data.List.Split
-import Data.Maybe (fromMaybe)
 import Data.Traversable (for)
 import System.Directory
 import Prelude
@@ -25,16 +24,21 @@ type HayStack = [String]
 type Needle = String
 type Replacement = String
 
-replace :: HayStack -> Needle -> Replacement -> Maybe HayStack
-replace haystack needle replacement = do
-    for haystack (Just <<< findAndReplace)
+{- | Finds and replaces a Needle in a HayStack.
+
+>>> findAndReplace ["hello", "alice", "bob"] "alice" "john"
+Just ["hello","john","bob"]
+-}
+findAndReplace :: HayStack -> Needle -> Replacement -> Maybe HayStack
+findAndReplace haystack needle replacement = do
+    for haystack (Just <<< replace)
   where
-    findAndReplace word = if word == needle then replacement else word
+    replace word = if word == needle then replacement else word
 
 {- | Runs the app, which does the following:
 
     1. open and read contents at the file already put at `/tmp/latin.txt`.
-    2. replace every needle from the contents (haystack) and show on the screen.
+    2. findAndReplace every needle from the contents (haystack) and show on the screen.
 
 SETUP:
     1. data: get either
@@ -63,6 +67,6 @@ runApp = do
             then do
                 let connector = " "
                 haystack <- splitOn connector <$> readFile path
-                print $ replace haystack needle replacement
+                print $ findAndReplace haystack needle replacement
             else
                 runApp
